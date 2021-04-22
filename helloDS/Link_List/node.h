@@ -14,6 +14,5 @@ int Get(Node * first, int i, DataType * ptr);   // 按位查找
 int Insert(Node * first, int i, DataType x);    // 链表中间插入
 Node * CreateListByHead(DataType a[], int n);   // 头插法
 Node * CreateListByTail(DataType a[], int n);   // 尾插法
-int DeleteMid(Node * first, int i, DataType * ptr); // 删除中间结点
-Node * DeleteTail(Node * first);   // 删除最后一个结点
+int Delete(Node * first, int i, DataType * ptr); // 删除结点
 void DestroyList(Node * first); // 销毁链表

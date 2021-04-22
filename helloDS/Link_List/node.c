@@ -127,8 +127,8 @@ Node * CreateListByTail(DataType a[], int n) {
     return first;
 }
 
-// 删除中间结点
-int DeleteMid(Node * first, int i, DataType * ptr) {
+// 删除结点
+int Delete(Node * first, int i, DataType * ptr) {
     Node * p = first, * q = NULL;
     int count = 0;
     DataType x;
@@ -147,19 +147,6 @@ int DeleteMid(Node * first, int i, DataType * ptr) {
         free(q);    //释放空间
         return 1;
     }
-}
-
-// 删除最后一个结点
-Node * DeleteTail(Node * first) {
-    Node * p = first, * o;
-
-    while (p->next != NULL) {
-        o = p;
-        p = p->next;
-    }
-    o->next = NULL;
-
-    return first;
 }
 
 // 销毁链表

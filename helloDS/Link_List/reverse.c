@@ -7,13 +7,35 @@ Node * Reverse(Node * first);
 int main() {
     int a[5] = {1, 3, 4, 5, 2};
 
-    Node * first, * final, *del, *first1;
+    Node * first, * final;
     first = CreateListByTail(a, 5);
     PrintList(first);
 
-    first1 = CreateListByTail(a, 5);
-    del = DeleteTail(first1);
-    PrintList(del);
+    DataType value;
+    int found;
+
+    found = Get(first, 3, &value);
+    if (found) {
+        printf("%d\n", value);
+    }
+
+    // DataType dvalue;
+    // int found2, b[5];
+    // for(int i=0; i<5; i++) {
+    //     found2 = Delete(first, i+1, &dvalue);
+    //     if (found2) {
+    //         // printf("%d\n", dvalue);
+    //         b[i] = dvalue;
+    //     }
+    // }
+
+    // for(int j=0; j<5; j++) {
+    //     printf("%d ", b[j]);
+    // }
+    // printf("\n");
+
+    // final = CreateListByHead(b, 5);
+    // PrintList(final);
 
     final = Reverse(first);
     PrintList(final);
@@ -21,28 +43,22 @@ int main() {
     return 0;
 }
 
-// 实现链表倒序
 Node * Reverse(Node * first) {
     int len = Length(first);
     int a[len];
-    // Node * p = first, * o;
-    Node * p;
+
+    DataType value;
+    int found;
 
     for (int i=0; i<len; i++) {
-        p = DeleteTail(first);
-        // while (p->next != NULL) {
-        //     o = p;
-        //     p = p->next;
-        // }
-        // o->next = NULL;
-
-        a[i] = p->data;
-        p = first;
+        found = Delete(first, i+1, &value);
+        if (found) {
+            a[i] = value;
+        }
     }
-    free(p);
 
-    Node * final;
-    final = CreateListByTail(a, len);
+    Node *final;
+    final = CreateListByHead(a, len);
 
     return final;
 }
