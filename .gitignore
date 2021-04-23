@@ -4,3 +4,4 @@ LinkList2
 *.o
 test
 reverse
+seq_list
