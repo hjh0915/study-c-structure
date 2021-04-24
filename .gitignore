@@ -6,3 +6,6 @@ test
 reverse
 seq_list
 seq_stack
+
+lib
+linked_stack
