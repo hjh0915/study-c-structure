@@ -8,6 +8,15 @@ void InitQueue(CirQueue * Q) {
     Q->front = Q->rear = 0;
 }
 
+//判断front是否等于rear
+int Empty(CirQueue * Q) {
+    if (Q->rear == Q->front) {
+        return 1;
+    } else {
+        return 0;
+    }
+}
+
 //入队
 int EnQueue(CirQueue * Q, DataType x) {
     if ((Q->rear+1)%QueueSize == Q->front) {
