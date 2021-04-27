@@ -16,6 +16,9 @@ int main() {
     printf("\n后序遍历：");
     PostOrder(root);
 
+    printf("\n层次遍历: ");
+    LevelOrder(root);
+
     DestroyBTree(root);
     return 0;
 }
