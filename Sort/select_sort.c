@@ -2,8 +2,9 @@
 
 void SelectSort(int r[], int n) {
     int i, j, index;
+    int temp;
 
-    for(i=1; i<n; i++) {
+    for(i=0; i<n-1; i++) {
         index = i;
 
         for(j=i+1; j<n; j++) {
@@ -12,7 +13,6 @@ void SelectSort(int r[], int n) {
             }
         }
         if(index != i) {
-            int temp = r[0];
             temp = r[i];
             r[i] = r[index];
             r[index] = temp;

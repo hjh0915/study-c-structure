@@ -3,15 +3,17 @@
 void BubbleSort(int r[], int n) {
     int j, exchange, bound;
     exchange = n;
+    int x;
+
     while (exchange != 0) {
         bound = exchange;
         exchange = 0;
 
         for(j=0; j<bound; j++) {
             if(r[j] > r[j+1]) {
-                r[0] = r[j];
+                x = r[j];
                 r[j] = r[j+1];
-                r[j+1] = r[0];
+                r[j+1] = x;
                 exchange = j;
             }
         }

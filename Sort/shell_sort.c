@@ -3,13 +3,15 @@
 void ShellSort(int r[], int n) {
     int d, i, j;
     for(d=n/2; d>=1; d=d/2) {
+
         for(i=d+1; i<=n; i++) {
-            r[0] = r[i];
-            for(j=i-d; j>0 && r[0]<r[j]; j=j-d) {
+            int x = r[i];
+
+            for(j=i-d; j>0 && x<r[j]; j=j-d) {
                 r[j+d] = r[j];
             }
 
-            r[j+d] = r[0];
+            r[j+d] = x;
         }
     }
 }
